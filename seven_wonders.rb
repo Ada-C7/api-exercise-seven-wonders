@@ -3,7 +3,7 @@ require 'httparty'
 #Starter Code:
 seven_wonders = ["Great Pyramind of Giza", "Hanging Gardens of Babylon", "Colossus of Rhodes", "Lighthouse of Alexandria", "Statue of Zeus at Olympia", "Temple of Artemis", "Mausoleum at Halicarnassus"]
 
-
+YOUR_API_KEY = "AIzaSyCgAhWAeYtzrKwyGdhAPPArBJu-BBMmFzA"
 
 
 
