@@ -3,7 +3,7 @@ require 'json'
 
 BASE_URL = "https://maps.googleapis.com/maps/api/geocode/json?"
 
-SEVEN_WONDERS_URL = [
+SEVEN_WONDERS = [
   "Great+Pyramind+of+Giza",
   "Hanging+Gardens+of+Babylon",
   "Colossus+of+Rhodes",
@@ -13,7 +13,7 @@ SEVEN_WONDERS_URL = [
   "Mausoleum+at+Halicarnassus"
 ]
 
-test_hash = {}
+seven_wonders_coordinates = {}
 
 
 
@@ -21,15 +21,15 @@ SEVEN_WONDERS.each do |one_wonder|
   url ="#{BASE_URL}address=#{one_wonder}"
   response = HTTParty.get(url).parsed_response
 
-  latitude =  JSON.parse response["results"][0]["geometry"]["location"]["lat"].to_json
-  longitude = JSON.parse response["results"][0]["geometry"]["location"]["lng"].to_json
+  latitude =  response["results"][0]["geometry"]["location"]["lat"].to_json
+  longitude = response["results"][0]["geometry"]["location"]["lng"].to_json
 
    one_wonder_name = one_wonder.tr('+', ' ')
 
-  test_hash.merge!( one_wonder_name =>{"lat" => latitude, "lng" => longitude})
+  seven_wonders_coordinates.merge!( one_wonder_name =>{"lat" => latitude, "lng" => longitude})
 end
 
-puts JSON.pretty_generate(test_hash)
+puts JSON.pretty_generate(seven_wonders_coordinates)
 
 
 
