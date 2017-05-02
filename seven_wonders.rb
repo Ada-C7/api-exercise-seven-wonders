@@ -14,7 +14,7 @@ end
 
 puts output
 
-# for the human eye
+# for the human eye, but sometimes it's buggy
 
 puts "\n"
 puts "The Seven Wonders of the Ancient World"
