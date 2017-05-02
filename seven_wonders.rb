@@ -11,7 +11,7 @@ def find_location(landmark)
     "address" => landmark.split(" ").join("+"),
     "key" => API_KEY,
   }
-  data = HTTParty.get(BASE_URL, query: query_params)
+  data = HTTParty.get(BASE_URL, query: query_params) #.parsed_response not needed?
   # See sample JSON hash below
   location = data['results'].first['geometry']['location']
 end
